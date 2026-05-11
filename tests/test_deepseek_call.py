@@ -1,7 +1,7 @@
 import requests
 import json
 
-api_key = "sk-aa10ae6f31c64775927291e3303363ed"
+api_key = "sk-xxx"
 endpoint = "https://api.deepseek.com"
 url = endpoint.rstrip('/') + '/v1/chat/completions'
 print('POST', url)
