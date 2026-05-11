@@ -1,9 +1,9 @@
 from ultralytics import YOLO
 import os
 
-MODEL_PATH = r"runs/detect/autoresearch_dingweixiao_100ep-final/weights/best.pt"
-SOURCE = r"D:\DingReihwa\6_AI\datasets\yolo_datasets\detect\dingweixiao\images"
-OUT_DIR = r"runs/detect/autoresearch_dingweixiao_100ep-final/predict"
+MODEL_PATH = r"best.pt"
+SOURCE = r"images"
+OUT_DIR = r"predict"
 
 os.makedirs(OUT_DIR, exist_ok=True)
 
