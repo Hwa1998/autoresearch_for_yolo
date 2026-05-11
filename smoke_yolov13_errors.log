@@ -1,0 +1,12 @@
+MODULE: yolov13
+STATUS: ok
+MODULE: yolov13.train
+STATUS: ok
+MODULE: yolov13.predict
+STATUS: ok
+MODULE: yolov13.ultralytics
+STATUS: ok
+MODULE: train_yolov13
+STATUS: ok
+MODULE: prepare_detection
+STATUS: ok

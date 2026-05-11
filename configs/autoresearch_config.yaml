@@ -1,0 +1,51 @@
+# Sample AutoResearch configuration
+# Use this file to set defaults for autoresearch_loop.py. CLI flags override these values.
+
+# Mode: 'train' or 'experiment'
+mode: experiment
+# mode: train
+
+# If running single-train mode, set model (path to YAML)
+model: null
+# model: yolov13/ultralytics/cfg/models/v13/yolov13_nmsfree.yaml
+
+# Data YAML (can also be passed via --data)
+data: xxx.yaml
+
+# Task type: detect | cls | obb | seg | pose
+task_type: detect
+
+# Which phases to run when in experiment mode (can be a comma-separated string or list)
+phases: [1,2,3,4]
+# phases: [1]
+
+# Phase and training params
+short_epochs: 50
+long_epochs: 200
+phase2_rounds: 12
+phase4_rounds: 30
+keep_k: 2
+
+# Phase4 options
+phase4_struct: true           # try model-structure variants
+disable_phase4_loss: false    # disable loss/param search if true
+struct_replacements: "C2f:C2PSA,C2f:C2fPSA,A2C2f:A2C2f"
+struct_rounds: 60
+
+# LLM settings for Phase4 (do NOT store real keys in repo; this is a template)
+# use_llm_phase4: false
+use_llm_phase4: true
+# llm_api_key: null
+llm_api_key: sk-xxx
+llm_endpoint: https://api.deepseek.com
+llm_model: deepseek-v4-flash
+
+# Output path and randomness
+out: runs/autoresearch/results.jsonl
+seed: 42
+
+# Optional: directly provide candidate model YAMLs to use in Phase1 (absolute or repo-relative paths)
+candidates:
+  - yolov13/ultralytics/cfg/models/v13/yolov13_nmsfree.yaml
+  - yolov13/ultralytics/cfg/models/v13/yolov13.yaml
+  - yolov13/ultralytics/cfg/models/v13/yolov13_v10detect.yaml
